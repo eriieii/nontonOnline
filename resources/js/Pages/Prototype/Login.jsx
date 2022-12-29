@@ -1,5 +1,5 @@
 import TextInput from "@/Components/TextInput";
-import InputLabel from "@/Components/InputLabel";
+import InputLabel from "@/Components/Input";
 import Button from "@/Components/Button";
 import { Link, Head } from "@inertiajs/inertia-react";
 
@@ -56,6 +56,15 @@ export default function Login() {
                             Start Watching
                         </span>
                     </Button>
+
+                    <Link href={route('prototype.dashboard')}>
+                        <Button type="button" variant="btn-light-outline">
+                            <span className="text-base text-white">
+                                Dashboard
+                            </span>
+                        </Button>
+                    </Link>
+                    
 
                     <Link href={route('prototype.register')}>
                         <Button type="button" variant="btn-light-outline">

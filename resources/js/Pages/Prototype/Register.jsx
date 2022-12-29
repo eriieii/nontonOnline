@@ -1,4 +1,4 @@
-import InputLabel from "@/Components/InputLabel";
+import InputLabel from "@/Components/Input";
 import TextInput from "@/Components/TextInput";
 import Button from "@/Components/Button";
 import { Head, Link } from "@inertiajs/inertia-react";
@@ -66,6 +66,14 @@ export default function Register() {
                                 Sign Up
                             </span>
                         </Button>
+
+                        <Link href={route('prototype.dashboard')}>
+                        <Button type="button" variant="btn-light-outline">
+                            <span className="text-base text-white">
+                                Dashboard
+                            </span>
+                        </Button>
+                    </Link>
     
                         <Link href={route('prototype.login')}>
                             <Button type="button" variant="btn-light-outline">
