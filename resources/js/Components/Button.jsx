@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
 
-PrimaryButton.propTypes = {
+Button.propTypes = {
     type: PropTypes.oneOf(["button", "submit","reset"]),
     className: PropTypes.string,
     processing: PropTypes.bool,
     children: PropTypes.node,
 }
 
-export default function PrimaryButton({ 
+export default function Button({ 
     type = 'submit', 
-    className = '', 
+    className, 
+    variant = 'primary',
     processing,
     children, 
     onClick }) {
@@ -17,7 +18,10 @@ export default function PrimaryButton({
         <button
             type={type}
             onClick={onClick}
-            className={`rounded-2xl  bg-alerange py-[13px] text-center w-full ${processing && "opacity-30"} ${className}`}
+            className={
+                `rounded-2xl py-[13px] text-center w-full ${processing && "opacity-30"} btn-${variant} ${className}`
+              
+            }
             disabled={processing}
         >
             {children}
