@@ -1,6 +1,7 @@
 import Authenticated from "@/Layouts/Authenticated/Index";
 import Flickity from 'react-flickity-component';
 import {Head} from '@inertiajs/inertia-react';
+import FeauturedMovies from "@/Components/FeaturedMovies";
 
 export default function Dashboard() {
     const flickityOptions = {
@@ -24,30 +25,14 @@ export default function Dashboard() {
              {/* Movie Thumbnail  */}
                     <Flickity className="gap-[30px]" options={flickityOptions}>
                         {[1,2,3,4].map(i =>
-                            <div className="absolute overflow-hidden group mr-[30px]" key={i}>
-                                <img src="/images/featured-1.png"
-                                     className="object-cover rounded-[30px] w-[520px] h-[340px]" alt="" />
-                                {/* rating  */}
-                                <div className="rating absolute top-0 left-0">
-                                    <div className="p-[30px] flex items-center gap-1">
-                                        <img src="/icons/ic_star.svg" alt="" />
-                                        <span className="text-sm font-medium text-white mt-1">4.5/5.0</span>
-                                    </div>
-                                </div>
-                                {/* bottom detail  */}
-                                <div className="absolute bottom-0 h-[100px] left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px]
-                                        rounded-br-[28px] flex justify-between items-center px-7 h-[130px]">
-                                    <div>
-                                        <div className="font-medium text-[22px] text-white">The Batman in Love</div>
-                                        <p className="mb-0 text-white text-sm font-light">Action • Horror</p>
-                                    </div>
-                                    <div
-                                        className="translate-x-[100px] group-hover:translate-x-0 transition ease-in-out duration-500">
-                                        <img src="/icons/ic_play.svg" width="50" alt="" />
-                                    </div>
-                                </div>
-                                <a href="#" className="inset-0 absolute z-50"></a>
-                            </div>
+                            <FeauturedMovies
+                                key={i}
+                                slug="batman-in-love"
+                                name={`The Batman in love ${i}`}
+                                category="Comedy"
+                                thumbnail="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1159&q=80"
+                                rating={i + 1}
+                            />
                         )}
 
                     </Flickity>
