@@ -1,3 +1,11 @@
+import PropTypes from "prop-types";
+
+BrowseMovies.propTypes = {
+    slug: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    thumbnail: PropTypes.string.isRequired
+};
 export default function BrowseMovies({
                                          slug,
                                          name,
