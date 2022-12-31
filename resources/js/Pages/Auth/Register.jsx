@@ -138,15 +138,9 @@ export default function Register() {
                                     </span>
                                 </Button>
 
-                                <Link href={route('prototype.dashboard')}>
-                                    <Button type="button" variant="btn-light-outline">
-                                        <span className="text-base text-white">
-                                            Dashboard
-                                        </span>
-                                    </Button>
-                                </Link>
 
-                                <Link href={route('prototype.login')}>
+
+                                <Link href={route('login')}>
                                     <Button type="button" variant="btn-light-outline">
                                 <span className="text-base text-white">
                                     Sign In to My Account
