@@ -7,6 +7,7 @@ use Inertia\Inertia;
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\User\MovieController;
 use App\Http\Controllers\User\SubcriptionPlanController;
+use App\Http\Controllers\Admin\MovieController as AdminMovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,9 @@ Route::middleware(['auth', 'role:user'])->prefix('dashboard')->name('user.dashbo
     Route::post('subscription-plan/{subcriptionPlan}/user-subscribe', [SubcriptionPlanController::class, 'userSubscribe'])->name('subcription.userSubscribe');
 });
 
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.dashboard.')->group(function () {
+    Route::resource('movie',AdminMovieController::class);
+});
 Route::prefix('prototype')->name('prototype.')->group(function () {
     route::get('/login', function () {
         return Inertia::render('Prototype/Login');
