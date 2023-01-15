@@ -20,7 +20,10 @@ class MovieController extends Controller
      */
     public function index()
     {
-        return Inertia('Admin/Movie/Index');
+        $movies = Movie::all();
+        return Inertia('Admin/Movie/Index', [
+            'movies' => $movies
+        ]);
     }
 
     /**
